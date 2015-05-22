@@ -17,6 +17,17 @@ use Illuminate\Support\Facades\Lang;
 class AuthController extends Controller {
 
   /**
+   * User management view. 
+   *
+   * @return virw
+   */
+  public function index() {
+    $data['title'] = Lang::get(''); 
+
+    return view('admin.users' $data);
+  }
+
+  /**
    * Try to login the user.
    *
    * @link   POST /login/verify

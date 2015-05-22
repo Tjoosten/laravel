@@ -12,7 +12,8 @@ class AuthControllerTest extends TestCase {
 	}
 
 	public function testUndoBlock() {
-
+		$response = $this->call('GET', ''); 
+		$this->assertEquals(200, $response->getStatusCode());
 	}
 
 	public function testSetToUser() {
@@ -23,6 +24,11 @@ class AuthControllerTest extends TestCase {
 	public function testSetToAdministrator() {
 		$response = $this->call('GET', '/');
 		$this->assertEquals(200, $response->getStatusCode())
+	}
+
+	public function testLogoutUrl() {
+		$response = $thios->call('', '/'); 
+		$this->assertEquals(200, $response->getStatusCode());
 	}
 
 }

@@ -25,6 +25,7 @@ Route::group(['prefix' => 'user'], function() {
 });
 
 Route::group(['prefix' => 'auth'], function() {
+  Route::get('/management', ['middleware' => 'Admin', 'uses' => 'AuthController@index']);
   Route::get('/login', 'AuthController@viewLogin');
   Route::post('/verify', 'AuthController@verify');
   Route::get('/logout', 'AuthController@logout');

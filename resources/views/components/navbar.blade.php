@@ -46,7 +46,11 @@
             </a>
 
             <ul class="dropdown-menu">
-              <li><a href="">{!! Lang::get('navbar.logout') !!}</a>
+              @if(Auth::user()->role == 'A')
+                <li><a href="/auth/management">{!! Lang::get('navbar.adminManagement') !!}</a></li>
+              @endif
+              <li><a href="">{!! Lang::get('navbar.configuration') !!}</a></li>
+              <li><a href="/auth/logout">{!! Lang::get('navbar.logout') !!}</a>
             </ul>
           </li>
         </ul>
