@@ -29,3 +29,5 @@ Route::group(['prefix' => 'auth'], function() {
   Route::post('/verify', 'AuthController@verify');
   Route::get('/logout', 'AuthController@logout');
 });
+
+Route::resource('words','WordController');

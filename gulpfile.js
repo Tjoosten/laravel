@@ -18,14 +18,16 @@ var elixir = require('laravel-elixir');
  | gulp tdd     = Watch Tests and PHP classes for changes.
  */
 
-// PHPunit tests.
-elixir(function(mix) {
-  mix.phpUnit();
-});
-
 // Less tasks.
 elixir(function(mix) {
   mix.less([
     'bootstrap.less',
+    'font-awesome.less'
   ]);
+});
+
+// Move fonts to the public asset directory.
+elixir(function(mix) {
+    mix.copy('resources/assets/less/bootstrap/fonts/', 'public/fonts');
+    mix.copy('resources/assets/less/font-awesome/fonts/', 'public/fonts');
 });

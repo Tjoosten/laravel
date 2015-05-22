@@ -6,7 +6,7 @@
       'titleLogin'     => 'Login',
 
       // Alert messages
-      'successRegister'  => 'User is successfully created'
+      'successRegister'  => 'User is successfully created',
       'successRecover'   => 'Please check your mail for further instructions.',
       'SuccessUndoAdmin' => 'Success. You covert this user to user',
       'successDoAdmin'   => 'Success. You convert this user to administrator',
@@ -14,7 +14,7 @@
       'successDoBlock'   => 'Success. You blocked the user.',
 
       'errorRecover'     => 'Could not recover the login details.',
-      'errorLogin'       => 'Incorrect password or username'
+      'errorLogin'       => 'Incorrect password or username',
       'errorUndoAdmin'   => 'Could not revert the login to a user',
       'errorDoAdmin'     => 'Could not make this user a administrator',
       'errorLogout'      => 'Could not log the user',

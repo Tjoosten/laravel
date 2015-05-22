@@ -20,25 +20,36 @@
       <ul class="nav navbar-nav">
         <li>
           <a href="">
-            <span class=""></span>
+            <span class="fa fa-file-text-o"></span>
             {!! Lang::get('navbar.words') !!}
           </a>
         </li>
         <li>
-          <span class="fa fa-file-text"></span>
           <a href="">
+            <span class="fa fa-plus"></span>
             {!! Lang::get('navbar.insertNewWord') !!}
           </a>
         </li>
         <li>
-          <span class="fa fa-envelope"></span>
           <a href="">
+            <span class="fa fa-envelope"></span>
             {!! Lang::get('navbar.contact') !!}
           </a>
         </li>
       </ul>
 
       @if(Auth::check())
+        <ul class="nav navbar-nav navbar-right">
+          <li> 
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              {!! Auth::user()->firstname !!} {!! Auth::user()->lastname !!}
+            </a>
+
+            <ul class="dropdown-menu">
+              <li><a href="">{!! Lang::get('navbar.logout') !!}</a>
+            </ul>
+          </li>
+        </ul>
       @else
         <form method="POST" action="/auth/verify" class="navbar-form navbar-right">
           {{-- CSRF Protection --}}

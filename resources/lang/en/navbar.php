@@ -7,5 +7,6 @@
     'formEmail'     => 'Email',
     'formPass'      => 'Password ',
     'insertNewWord' => 'Insert new word',
-    'contact'       => 'Contact'
+    'contact'       => 'Contact', 
+    'logout'        => 'Logout'
   ];
