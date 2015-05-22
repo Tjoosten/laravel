@@ -24,7 +24,7 @@ class AuthController extends Controller {
   public function index() {
     $data['title'] = Lang::get(''); 
 
-    return view('admin.users' $data);
+    return view('admin.users', $data);
   }
 
   /**

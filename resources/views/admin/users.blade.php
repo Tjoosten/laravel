@@ -1,4 +1,1 @@
-@extends('')
 
-@section('content')
-@stop
