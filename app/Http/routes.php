@@ -16,17 +16,17 @@ Route::get('/', 'VariousController@frontpage');
 
 // Auth & User management.
 Route::group(['prefix' => 'user'], function() {
-  Route::get('/register', ['middleware' => 'Admin', 'uses' => 'AuthController@registerView']);
-  Route::post('/register', ['middleware' => 'Admin', 'uses' => 'AuthController@postRegister']);
-  Route::get('/admin/{id}', ['middleware' => 'Admin', 'uses' => 'AuthController@DoAdmin']);
-  Route::get('/undoAdmin/{id}', ['middleware' => 'Admin', 'uses' => 'AuthController@UndoAdmin']);
-  Route::get('/block/{id}', ['middleware' => 'Admin', 'uses' => 'AuthController@doBlock']);
-  Route::get('/unblock/{id}', ['middleware' => 'Admin', 'uses' => 'AuthController@UndoBlock']);
+  Route::get('/register', 'AuthController@registerView');
+  Route::post('/register', 'AuthController@postRegister');
+  Route::get('/admin/{id}', 'AuthController@DoAdmin');
+  Route::get('/undoAdmin/{id}', 'AuthController@UndoAdmin');
+  Route::get('/block/{id}', 'AuthController@doBlock');
+  Route::get('/unblock/{id}','AuthController@UndoBlock');
   Route::get('/recovery', 'AuthController@recover');
 });
 
 Route::group(['prefix' => 'auth'], function() {
-  Route::get('/management', ['middleware' => 'Admin', 'uses' => 'AuthController@index']);
+  Route::get('/management', 'AuthController@index');
   Route::get('/login', 'AuthController@viewLogin');
   Route::post('/verify', 'AuthController@verify');
   Route::get('/logout', 'AuthController@logout');
