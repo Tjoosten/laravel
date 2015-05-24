@@ -237,16 +237,24 @@ class AuthController extends Controller {
   /**
    * Delete a user.
    *
-   * @param  $id, integer, the user id.
-   * @return Response.
+   * @link       GET /user/delete/{id}
+   * @middleware LoggedIn, Admin
+   * @param      $id, integer, the user id.
+   * @return     Response.
    */
   public function deleteLogin($id) {
     $MySQL = User::find($id);
     $MySQL->delete();
 
-    $alert['class']   = 'alert alert-success';
-    $alert['heading'] = Lang::get('acl.');
-    $alert['message'] = Lang::get('acl.');
+    if($MySQL->count() == 1) {
+      $alert['class']   = 'alert alert-success';
+      $alert['heading'] = Lang::get('acl.');
+      $alert['message'] = Lang::get('acl.');
+    } else {
+      $alert['class']   = 'alert alert-danger';
+      $alert['heading'] = Lang::get('');
+      $alert['message'] = Lang::get('');
+    }
 
     return Redirect::back()->with($alert);
   }
