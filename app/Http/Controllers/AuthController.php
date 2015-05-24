@@ -23,7 +23,7 @@ class AuthController extends Controller {
    */
   public function index() {
     $data['title'] = Lang::get('');
-    $data['query'] = User::all();
+    $data['query'] = User::paginate(25);
 
     return view('admin.users', $data);
   }
@@ -165,7 +165,8 @@ class AuthController extends Controller {
    * @return     void
    */
   public function UndoBlock($id) {
-    $MySQL  = User::find($id);
+    $MySQL          = User::find($id);
+    $MySQL->active  = "Y";
     $MySQL->save();
 
     if($MySQL->count() == 1) {
