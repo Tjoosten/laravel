@@ -62,13 +62,18 @@
 												<span class="fa fa-lock"></span>
 											</a>
 										@elseif($output->active == "N")
-											<a title="{!! Lang::get('titleUnblock') !!}" class="btn btn-xs btn-danger" href="">
+											<a title="{!! Lang::get('titleUnblock') !!}" class="btn btn-xs btn-danger" href="/user/unblock/{!! $output->id !!}">
 												<span class="fa fa-unlock"></span>
 											</a>
 										@endif
-										<a class="btn btn-xs btn-danger" href="">
-											<span class="fa fa-asterisk"></span>
-										</a>
+
+										@if($output->role == "U")
+											<a title="{!! Lang::get('acl.titleAdmin') !!}" class="btn btn-xs btn-danger" href="">
+												<span class="fa fa-asterisk"></span>
+											</a>
+										@elseif($output->role ==  "A")
+										@endif
+
 										<a class="btn btn-xs btn-danger" href="">
 											<span class="fa fa-trash-o"></span>
 										</a>
