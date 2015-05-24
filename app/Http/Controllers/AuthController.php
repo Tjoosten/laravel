@@ -139,7 +139,8 @@ class AuthController extends Controller {
    * @return     void
    */
   public function doBlock($id) {
-    $MySQL  = User::find($id);
+    $MySQL         = User::find($id);
+    $MySQL->active = "N";
     $MySQL->save();
 
     if($MySQL->count() == 1) {

@@ -39,13 +39,17 @@
 
 								<td>
 									@if($output->active == "Y")
-									 	<span class="label label-success">Actief</span>
+									 	<span class="label label-success">{!! Lang::get('acl.active') !!}</span>
+									@elseif($output->active == "N")
+										<span class="label label-info">{!! Lang::get('acl.nonActive') !!}</span>
 									@endif
 								</td>
 
 								<td>
 									@if($output->role == "A")
-										<span class="label label-danger">Administrator</span>
+										<span class="label label-danger">{!! Lang::get('Administrator') !!}</span>
+									@elseif($output->role == "U")
+										<span class="label label-warning">{!! Lang::get('acl.User') !!}</span>
 									@endif
 							 	</td>
 
@@ -53,8 +57,21 @@
 
 								<td>
 									<div class="btn-group">
-										<a class="btn btn-xs btn-danger"><span class="fa fa-lock"></span></a>
-										<a class="btn btn-xs btn-danger"><span class="fa fa-asterisk"></span></a>
+										@if($output->active == "Y")
+											<a title="{!! Lang::get('acl.titleBlock') !!}" class="btn btn-xs btn-danger" href="/user/block/{!! $output->id !!}">
+												<span class="fa fa-lock"></span>
+											</a>
+										@elseif($output->active == "N")
+											<a title="{!! Lang::get('titleUnblock') !!}" class="btn btn-xs btn-danger" href="">
+												<span class="fa fa-unlock"></span>
+											</a>
+										@endif
+										<a class="btn btn-xs btn-danger" href="">
+											<span class="fa fa-asterisk"></span>
+										</a>
+										<a class="btn btn-xs btn-danger" href="">
+											<span class="fa fa-trash-o"></span>
+										</a>
 									</div>
 								</td>
 							</tr>
