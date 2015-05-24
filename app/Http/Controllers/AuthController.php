@@ -17,12 +17,13 @@ use Illuminate\Support\Facades\Lang;
 class AuthController extends Controller {
 
   /**
-   * User management view. 
+   * User management view.
    *
    * @return virw
    */
   public function index() {
-    $data['title'] = Lang::get(''); 
+    $data['title'] = Lang::get('');
+    $data['query'] = User::all();
 
     return view('admin.users', $data);
   }
