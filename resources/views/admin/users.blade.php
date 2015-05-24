@@ -49,7 +49,7 @@
 									@if($output->role == "A")
 										<span class="label label-danger">{!! Lang::get('Administrator') !!}</span>
 									@elseif($output->role == "U")
-										<span class="label label-warning">{!! Lang::get('acl.User') !!}</span>
+										<span class="label label-warning">{!! Lang::get('acl.user') !!}</span>
 									@endif
 							 	</td>
 
@@ -68,13 +68,16 @@
 										@endif
 
 										@if($output->role == "U")
-											<a title="{!! Lang::get('acl.titleAdmin') !!}" class="btn btn-xs btn-danger" href="">
+											<a title="{!! Lang::get('acl.titleAdmin') !!}" class="btn btn-xs btn-danger" href="/user/admin/{!! $output->id !!}">
 												<span class="fa fa-asterisk"></span>
 											</a>
 										@elseif($output->role ==  "A")
+											<a title="{!! Lang::get('acl.titleUser') !!}" class="btn btn-xs btn-danger" href="/user/undoAdmin/{!! $output->id !!}">
+												<span class="fa fa-asterisk"></span>
+											</a>
 										@endif
 
-										<a class="btn btn-xs btn-danger" href="">
+										<a class="btn btn-xs btn-danger" title="{!! Lang::get('acl.titleDelete') !!}" href="/user/delete/{!! $output->id !!}">
 											<span class="fa fa-trash-o"></span>
 										</a>
 									</div>

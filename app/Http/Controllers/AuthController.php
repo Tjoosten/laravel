@@ -192,7 +192,7 @@ class AuthController extends Controller {
    */
   public function DoAdmin($id) {
     $MySQL       = User::find($id);
-    $MySQL->role = 'Y';
+    $MySQL->role = 'A';
     $MySQL->save();
 
     if($MySQL->count() == 1) {
@@ -230,6 +230,23 @@ class AuthController extends Controller {
       $alert['heading'] = Lang::get('alerts.danger');
       $alert['message'] = Lang::get('authencation.errorUndoAdmin');
     }
+
+    return Redirect::back()->with($alert);
+  }
+
+  /**
+   * Delete a user.
+   *
+   * @param  $id, integer, the user id.
+   * @return Response.
+   */
+  public function deleteLogin($id) {
+    $MySQL = User::find($id);
+    $MySQL->delete();
+
+    $alert['class']   = 'alert alert-success';
+    $alert['heading'] = Lang::get('acl.');
+    $alert['message'] = Lang::get('acl.');
 
     return Redirect::back()->with($alert);
   }
