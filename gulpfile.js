@@ -22,7 +22,8 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
   mix.less([
     'bootstrap.less',
-    'font-awesome.less'
+    'font-awesome.less',
+    'costum.less',
   ]);
 });
 

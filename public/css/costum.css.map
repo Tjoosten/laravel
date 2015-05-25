@@ -1,0 +1,1 @@
+{"version":3,"sources":["costum/global.less","costum.css","costum/forms.less"],"names":[],"mappings":"AAAA;EACE,mBAAA;ECCD;ACDD;EACE,YAAA;EDGD","file":"costum.css","sourcesContent":["body {\n  padding-top: 70px;\n}\n",null,"// Form width's\n.width-register {\n  width: 30%;\n}\n"],"sourceRoot":"/source/"}
