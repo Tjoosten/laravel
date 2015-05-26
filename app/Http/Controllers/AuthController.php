@@ -44,13 +44,13 @@ class AuthController extends Controller {
     ];
 
     if(Auth::attempt($requirements)) {
+      return Redirect::back();
+    } else {
       $alert['class']   = 'alert alert-danger';
       $alert['heading'] = Lang::get('alerts.danger');
       $alert['message'] = Lang::get('authencation.errorLogin');
 
-      return Redirect::back()->with($alert);
-    } else {
-      return Redirect::back()->withInput();
+      return Redirect::back()->with($alert)->withInput();
     }
   }
 
@@ -268,16 +268,9 @@ class AuthController extends Controller {
    * @return Response
    */
   public function logout() {
-
-    if(Auth::logout()) {
-      $alert['class']   = 'alert alert-success';
-      $alert['heading'] = Lang::get('alerts.success');
-      $alert['message'] = Lang::get('successLogout');
-    } elseif(! Auth::logout()) {
-      $alert['class']   = 'alert alert-danger';
-      $alert['heading'] = Lang::get('alerts.danger');
-      $alert['message'] = Lang::get('errorLogout');
-    }
+    $alert['class']   = 'alert alert-success';
+    $alert['heading'] = Lang::get('alerts.success');
+    $alert['message'] = Lang::get('authencation.successLogout');
 
     return Redirect::back()->with($alert);
   }
