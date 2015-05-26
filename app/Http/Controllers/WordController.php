@@ -34,7 +34,7 @@ class WordController extends Controller {
 		$data['title']  = Lang::get('');
 		$data['active'] = 2;
 
-		return view('', $data)
+		return view('', $data);
 	}
 
 	/**
