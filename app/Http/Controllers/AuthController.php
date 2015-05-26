@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Jobs;
 use App\Http\Requests;
 use App\Http\Requests\registerValidation;
 use App\Http\Controllers\Controller;
@@ -24,6 +25,7 @@ class AuthController extends Controller {
   public function index() {
     $data['title'] = Lang::get('');
     $data['query'] = User::paginate(25);
+    $data['jobs']  = Jobs::all();
 
     return view('admin.users', $data);
   }

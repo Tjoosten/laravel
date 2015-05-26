@@ -26,7 +26,7 @@ class registerValidation extends Request {
 			'lastname'   => 'required',
 			'birth'      => 'required',
 			'address'    => 'required',
-			'education' => 'required',
+			'education'  => 'required',
 			'job'        => 'required',
 			'email'      => 'required',
 		];

@@ -15,8 +15,9 @@
 				</div>
 			</div>
 
-			<div role="tabpanel">
+			<div class="tab-content" role="tabpanel">
 				@yield('users')
+				@yield('newUser')
 			</div>
 		</div>
 

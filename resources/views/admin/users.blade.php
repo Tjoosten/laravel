@@ -16,7 +16,7 @@
 @stop
 
 @section('users')
-	<div role="tabpanel" class="tab-pane fade in active" id="home">
+	<div role="tabpanel" class="tab-pane active" id="home">
 		<div style="margin-top: 10px;"></div>
 		<div class="row">
 			<div class="col-xs-9 col-md-9 col-sm-9 col-lg-9">
@@ -89,4 +89,49 @@
 			</div>
 		</div>
 	</div>
+@stop
+
+@section('newUser')
+<div role="tabpanel" class="tab-pane" id="new">
+	<div style="margin-top: 10px;"></div>
+	<div class="row">
+		<div class="col-xs-9 col-md-9 col-sm-9 col-lg-9">
+
+			{{-- Begin form --}}
+			<form method="POST" action="/user/register">
+				{{-- CSRF Token --}}
+				<input type="hidden" name="_token" value="{!! csrf_token() !!}">
+
+				<label for="01">{!! Lang::get('register.firstname') !!}</label>
+				<input id="01" type="text" placeholder="{!! Lang::get('register.firstname') !!}" name="firstname" class="width-register form-control" />
+				<br />
+
+				<label for="02">{!! Lang::get('register.lastname') !!}</label>
+				<input id="02" type="text" placeholder="{!! Lang::get('register.lastname') !!}" name="lastname" class="width-register form-control" />
+				<br />
+
+				<label for="03">{!! Lang::get('register.email') !!}</label>
+				<input id="03" type="text" placeholder="{!! Lang::get('register.email') !!}" name="email" class="width-register form-control" />
+				<br />
+
+				<label for="04"> {!! Lang::get('register.birth') !!} </label>
+				<input id="04" type="text" placeholder="{!! Lang::get('register.birth') !!}" name="birth" class="width-register form-control" />
+				<br />
+
+				<label for="05">{!! Lang::get('register.education') !!}</label>
+				<select id="05" class="width-register form-control" name="education">
+					@foreach($jobs as $job)
+						<option value="{!! $job->id !!}"> {!! $job->jobs !!} </option>
+					@endforeach
+				</select>
+				<br />
+
+				<button type="submit" class="btn btn-success"> {!! Lang::get('register.submit') !!}</button>
+				<button type="reset" class="btn btn-danger"> {!! Lang::get('register.reset') !!} </button>
+			</form>
+			{{-- END form --}}
+
+		</div>
+	</div>
+</div>
 @stop
