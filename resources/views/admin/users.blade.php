@@ -1,5 +1,31 @@
 @extends('layouts.acl')
 
+@section('alert')
+	@if(count($errors->all()) > 0)
+		<script>
+			window.setTimeout(function() {
+	  		$("#alert_message").fadeTo(500, 0).slideUp(500, function(){
+	    		$(this).remove();
+	  		});
+			}, 3000);
+
+			window.setTimeout(function() {
+	  		$("#success_message").fadeTo(500, 0).slideUp(500, function(){
+	    		$(this).remove();
+	  		});
+			}, 3000);
+		</script>
+
+		<div id='alert_message' class="alert alert-danger">
+			<ul>
+				@foreach($errors->all() as $error)
+					<li>{!! $error !!}</li>
+				@endforeach
+			</ul>
+		</div>
+	@endif
+@stop
+
 @section('nav')
 	<ul class="nav nav-tabs" role="tablist">
 		<li role="presentation" class="active">
