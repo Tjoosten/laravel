@@ -19,7 +19,7 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li>
-          <a href="">
+          <a href="/words">
             <span class="fa fa-file-text-o"></span>
             {!! Lang::get('navbar.words') !!}
           </a>
@@ -40,7 +40,7 @@
 
       @if(Auth::check())
         <ul class="nav navbar-nav navbar-right">
-          <li> 
+          <li>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
               {!! Auth::user()->firstname !!} {!! Auth::user()->lastname !!}
             </a>

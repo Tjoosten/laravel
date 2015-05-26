@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Http\Controllers;
 
@@ -16,11 +16,12 @@ class WordController extends Controller {
 	 * @return Response
 	 */
 	public function index() {
-		$data['title']  = Lang::get(''); 
+		$data['title']  = Lang::get('');
 		$data['active'] 2;
 		$data['qeury']  = Words::with()->paginate(25);
 
-		return view('', $data);
+		return view('client.words
+		', $data);
 	}
 
 	/**
@@ -46,14 +47,14 @@ class WordController extends Controller {
 		$word               = new Words;
 		$word->user_id      = Auth::user()->id;
 		$word->region_id    = $request->regionID;
-		$word->word         = $request->word; 
-		$word->word_an      = $request->word_an; 
-		$word->word_fonetic = $request->word_fonetic; 
-		$word->dialect      = $request->dialect; 
+		$word->word         = $request->word;
+		$word->word_an      = $request->word_an;
+		$word->word_fonetic = $request->word_fonetic;
+		$word->dialect      = $request->dialect;
 		$word->description  = $request->description;
 		$word->save();
 
-		$alert['class']   = Lang::get('');  
+		$alert['class']   = Lang::get('');
 		$alert['heading'] = Lang::get('');
 		$alert['message'] = Lang::get('');
 
@@ -79,20 +80,20 @@ class WordController extends Controller {
 	 * @return Response
 	 */
 	public function update(WordValidation $request, $id) {
-		$word = new Words; 
+		$word = new Words;
 		$word->user_id      = $request->userID;
 		$word->region_id    = $request->regionID;
 		$word->word         = $request->word;
-		$word->word_an      = $request->word_an; 
-		$word->word_fonetic = $request->word_fonetic; 
-		$word->dialect      = $request->dialect; 
+		$word->word_an      = $request->word_an;
+		$word->word_fonetic = $request->word_fonetic;
+		$word->dialect      = $request->dialect;
 		$word->description  = $request->save();
 		$word->save();
 
-		$alert['class']   = Lang::get(''); 
-		$alert['heading'] = Lang::get(''); 
-		$alert['message'] = Lang::get(''); 
-		
+		$alert['class']   = Lang::get('');
+		$alert['heading'] = Lang::get('');
+		$alert['message'] = Lang::get('');
+
 		return Redirect::back()->with($alert);
 	}
 
@@ -104,7 +105,7 @@ class WordController extends Controller {
 	 */
 	public function edit($id) {
 		$data['title']  = Lang::get();
-		$data['active'] = 2; 
+		$data['active'] = 2;
 		$data['query']  =
 
 		return view();
@@ -117,14 +118,14 @@ class WordController extends Controller {
 	 * @return Response
 	 */
 	public function destroy($id) {
-		$word = Words::find($id); 
+		$word = Words::find($id);
 		$word->delete();
 
 		$alert['class']   = Lang::get('');
 		$alert['heading'] = Lang::get('');
 		$alert['message'] = Lang::get('');
 
-		return Redirect::back()->with($alert); 
+		return Redirect::back()->with($alert);
 	}
 
 }
