@@ -1,27 +1,27 @@
 @extends('layouts.acl')
 
 @section('alert')
+
+	<script>
+		window.setTimeout(function() {
+			$("#notification").fadeTo(500, 0).slideUp(500, function(){
+				$(this).remove();
+			});
+		}, 3000);
+	</script>
+
 	@if(count($errors->all()) > 0)
-		<script>
-			window.setTimeout(function() {
-	  		$("#alert_message").fadeTo(500, 0).slideUp(500, function(){
-	    		$(this).remove();
-	  		});
-			}, 3000);
-
-			window.setTimeout(function() {
-	  		$("#success_message").fadeTo(500, 0).slideUp(500, function(){
-	    		$(this).remove();
-	  		});
-			}, 3000);
-		</script>
-
-		<div id='alert_message' class="alert alert-danger">
+		<div id="notification" class="alert alert-danger">
 			<ul>
 				@foreach($errors->all() as $error)
 					<li>{!! $error !!}</li>
 				@endforeach
 			</ul>
+		</div>
+	@elseif(Session::has('message') && Session::has('class') && Session::has('heading'))
+		<div id="notification" class="{{ Session::get('class') }}">
+	  	<h4> {{ Session::get('heading') }} </h4>
+	  	<p> {{ Session::get('message') }} </p>
 		</div>
 	@endif
 @stop
@@ -145,7 +145,7 @@
 				<br />
 
 				<label for="05">{!! Lang::get('register.education') !!}</label>
-				<select id="05" class="width-register form-control" name="education">
+				<select id="05" class="width-register form-control" name="job">
 					@foreach($jobs as $job)
 						<option value="{!! $job->id !!}"> {!! $job->jobs !!} </option>
 					@endforeach

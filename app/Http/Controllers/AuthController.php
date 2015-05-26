@@ -81,7 +81,7 @@ class AuthController extends Controller {
       $alert['heading'] = Lang::get('alerts.danger');
       $alert['message'] = Lang::get('authencation.errorRecover');
     } else {
-      $newPassword = Hash::make(str_random(4));
+      $newPassword     = Hash::make(str_random(4));
 
       $MySQL           = User::where('password', '=', Input::get('email'));
       $MySQL->password = $newPassword;

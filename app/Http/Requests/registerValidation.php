@@ -26,8 +26,8 @@ class registerValidation extends Request {
 			'firstname'  => 'required',
 			'lastname'   => 'required',
 			'birth'      => 'required',
-			'address'    => 'required',
-			'education'  => 'required',
+	//	'address'    => 'required',
+	//	'education'  => 'required',
 			'job'        => 'required',
 			'email'      => 'required',
 		];
@@ -43,8 +43,8 @@ class registerValidation extends Request {
 			'firstname.required' => Lang::get('validation.required'),
 			'lastname.required'  => Lang::get('validation.required'),
 			'birth.required'     => Lang::get('validation.required'),
-			'address.required'   => Lang::get('validation.required'),
-			'education.required' => Lang::get('validation.required'),
+	//	'address.required'   => Lang::get('validation.required'),
+	//	'education.required' => Lang::get('validation.required'),
 			'job.required'       => Lang::get('validation.required'),
 			'email.required'     => Lang::get('validation.required'),
 		];
