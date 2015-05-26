@@ -39,13 +39,13 @@ class registerValidation extends Request {
 	 */
 	public function messages() {
 		return [
-			'firstname.required' => Lang::get('validation.required');
-			'lastname.required'  => Lang::get('validation.required');
-			'birth.required'     => Lang::get('validation.required');
-			'address.required'   => Lang::get('validation.required');
-			'education.required' => Lang::get('validation.required');
-			'job.required'       => Lang::get('validation.required');
-			'email.required'     => Lang::get('validation.required');
+			'firstname.required' => Lang::get('validation.required'),
+			'lastname.required'  => Lang::get('validation.required'),
+			'birth.required'     => Lang::get('validation.required'),
+			'address.required'   => Lang::get('validation.required'),
+			'education.required' => Lang::get('validation.required'),
+			'job.required'       => Lang::get('validation.required'),
+			'email.required'     => Lang::get('validation.required'),
 		];
 	}
 
