@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Words;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 
 class WordController extends Controller {
 
@@ -18,10 +20,9 @@ class WordController extends Controller {
 	public function index() {
 		$data['title']  = Lang::get('');
 		$data['active'] = 2;
-		$data['qeury']  = Words::with()->paginate(25);
+		$data['qeury']  = Words::paginate(25);
 
-		return view('client.words
-		', $data);
+		return view('client.words', $data);
 	}
 
 	/**
@@ -106,7 +107,7 @@ class WordController extends Controller {
 	public function edit($id) {
 		$data['title']  = Lang::get();
 		$data['active'] = 2;
-		$data['query']  =
+		$data['query']  = "";
 
 		return view();
 	}
