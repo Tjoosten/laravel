@@ -17,7 +17,7 @@ class WordController extends Controller {
 	 */
 	public function index() {
 		$data['title']  = Lang::get('');
-		$data['active'] 2;
+		$data['active'] = 2;
 		$data['qeury']  = Words::with()->paginate(25);
 
 		return view('client.words
