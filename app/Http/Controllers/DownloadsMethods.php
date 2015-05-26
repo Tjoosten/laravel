@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Http\Controllers;
 
@@ -7,19 +7,32 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class DownloadsMethods extends Controller {
+
+	/**
+	 *
+	 */
 	public function MethodExcelAll() {
 
 	}
 
+	/**
+	 * @param
+	 */
 	public function MethodExcelSpecific($id) {
 
 	}
 
+	/**
+	 *
+	 */
 	public function MethodPdfAll() {
 
 	}
 
-	public function MethodPdfSpecific() {
-		
+	/**
+	 * @param
+	 */
+	public function MethodPdfSpecific($id) {
+
 	}
 }
