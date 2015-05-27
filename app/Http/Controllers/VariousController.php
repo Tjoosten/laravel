@@ -7,19 +7,26 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class VariousController extends Controller {
+class VariousController extends Controller
+{
 
-	/**
-	 * The frontpage of this application
-	 *
-	 * @link   GET /
-	 * @return \Illuminate\View\View
-	 */
-	public function frontpage() {
-		$data['title']  = "Index";
-		$data['active'] = 0;
+    /**
+     * The frontpage of this application
+     *
+     * @link   GET /
+     * @return \Illuminate\View\View
+     */
+    public function frontpage()
+    {
+        $data['title'] = "Index";
+        $data['active'] = 0;
 
-		return view('client.frontpage', $data);
-	}
+        return view('client.frontpage', $data);
+    }
+
+    public function contact()
+    {
+
+    }
 
 }

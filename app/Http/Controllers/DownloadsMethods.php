@@ -5,33 +5,38 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class DownloadsMethods extends Controller {
+class DownloadsMethods extends Controller
+{
 
-	/**
-	 *
-	 */
-	public function MethodExcelAll() {
+    /**
+     *
+     */
+    public function MethodExcelAll()
+    {
 
-	}
+    }
 
-	/**
-	 * @param
-	 */
-	public function MethodExcelSpecific($id) {
+    /**
+     * @param
+     */
+    public function MethodExcelSpecific($id)
+    {
 
-	}
+    }
 
-	/**
-	 *
-	 */
-	public function MethodPdfAll() {
+    /**
+     *
+     */
+    public function MethodPdfAll()
+    {
 
-	}
+    }
 
-	/**
-	 * @param
-	 */
-	public function MethodPdfSpecific($id) {
+    /**
+     * @param
+     */
+    public function MethodPdfSpecific($id)
+    {
 
-	}
+    }
 }
