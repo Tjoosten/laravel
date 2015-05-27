@@ -8,7 +8,8 @@ class AuthControllerTest extends TestCase {
 	}
 
 	public function testBlock() {
-
+        $response = $this->call('GET', '');
+        $this->assertEquals(200, $response->getStatusCode());
 	}
 
 	public function testUndoBlock() {

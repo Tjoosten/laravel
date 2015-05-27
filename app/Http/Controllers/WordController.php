@@ -18,9 +18,9 @@ class WordController extends Controller {
 	 * @return Response
 	 */
 	public function index() {
-		$data['title']  = Lang::get('');
+		$data['title']  = Lang::get('words.TitleIndex');
 		$data['active'] = 2;
-		$data['qeury']  = Words::paginate(25);
+		$data['query']  = Words::paginate(25);
 
 		return view('client.words', $data);
 	}
@@ -38,12 +38,13 @@ class WordController extends Controller {
 		return view('', $data);
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @link   POST
-	 * @return Response
-	 */
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @link   POST
+     * @param WordValidation $request
+     * @return Response
+     */
 	public function store(WordValidation $request) {
 		$word               = new Words;
 		$word->user_id      = Auth::user()->id;
@@ -74,12 +75,13 @@ class WordController extends Controller {
 		$data['query']  = Words::find($id)->get();
 	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param WordValidation $request
+     * @param  int $id
+     * @return Response
+     */
 	public function update(WordValidation $request, $id) {
 		$word = new Words;
 		$word->user_id      = $request->userID;
