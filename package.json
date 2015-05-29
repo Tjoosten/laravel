@@ -1,0 +1,21 @@
+{
+  "name": "KloekecodeAPI",
+  "version": "1.0.0",
+  "description": "a simple api in development",
+  "main": "server.json",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tjoosten/laravel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tjoosten/laravel/issues"
+  },
+  "homepage": "https://github.com/Tjoosten/laravel"
+}
