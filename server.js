@@ -4,7 +4,7 @@
 // ===================================================================================
 var express    = require('express');      // call express
 var bodyParser = require('body-parser');
-global.mysql      = require('mysql');
+global.mysql   = require('mysql');
 var config     = require('config');
 var dbConfig   = config.get('server.dbConfig');
 var app        = express();               // define our app using express.
@@ -23,12 +23,8 @@ global.connection = mysql.createConnection({
 
 // Check MySQL Connection.
 connection.connect(function(err) {
-    if(!err) {
-        console.log(" [SUCCESS] Database is connected ... \n\n");
-    } else {
-        console.log(" [ERROR] Database could not connect ... \n\n");
-        // console.log(err);
-    }
+    if(!err) console.log(" [SUCCESS] Database is connected ... \n\n");
+    else     console.log(" [ERROR] Database could not connect ... \n\n");
 });
 
 // configure app to use bodyParser()
