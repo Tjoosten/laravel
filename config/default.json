@@ -1,0 +1,10 @@
+{
+  "server": {
+    "dbConfig": {
+      "host": "localhost",
+      "user": "root",
+      "password": "root",
+      "database": "L854"
+    }
+  }
+}
