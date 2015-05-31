@@ -94,20 +94,21 @@ class ApiKloekcode extends ApiController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($kloekecode)
 	{
-		$Api['Query']       = Kloekecode::where('id', '=', $id);
-        $Api['Result']      = $Api['Query']->get();
-        $Api['OutputArray'] = new Collection($Api['result'], $this->KloekecodeCallback());
+		$Query       = Kloekecode::where('id', '=', $kloekecode)->get();
+        $OutputArray = new Collection($Query, $this->KloekecodeCallback());
 
-        if (count($Api['Result']) > 0) {
-            $content = $this->ErrorCallback();
+        if (count($Query) > 0) {
+            $content = $this->fractal->createData($OutputArray)->toJson();
         } else {
-            $content = $this->fractal->createData($outputLayout)->toJson();
+            $content = $this->ErrorCallback();
         }
 
         $response = response($content, 200);
         $response->header('Content-Type', 'Application/json');
+
+        return $response;
 	}
 
 	/**
