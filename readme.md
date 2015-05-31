@@ -8,3 +8,6 @@ Dialect database
 [![devDependency Status](https://img.shields.io/david/dev/Tjoosten/laravel.svg?style=flat)](https://david-dm.org/Tjoosten/laravel#info=devDependencies)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/96617297-b75d-447f-86c3-f80d280633ed/mini.png)](https://insight.sensiolabs.com/projects/96617297-b75d-447f-86c3-f80d280633ed)
 [![Stories in Ready](https://badge.waffle.io/Tjoosten/laravel.png?label=ready&title=Ready)](https://waffle.io/Tjoosten/laravel)
+
+## Bug fixing activity 
+[![Throughput Graph](https://graphs.waffle.io/tjoosten/laravel/throughput.svg)](https://waffle.io/tjoosten/laravel/metrics)

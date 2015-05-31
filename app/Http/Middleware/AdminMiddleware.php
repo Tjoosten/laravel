@@ -3,7 +3,7 @@
 	use Closure;
 	use Illuminate\Support\Facades\Redirect;
 	use Illuminate\Support\Facades\Auth;
-    
+
 	class AdminMiddleware {
 		/**
 		 * Handle an incoming request.
