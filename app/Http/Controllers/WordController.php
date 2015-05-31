@@ -20,9 +20,9 @@ class WordController extends Controller
      */
     public function index()
     {
-        $data['title'] = Lang::get('words.TitleIndex');
+        $data['title']  = Lang::get('words.TitleIndex');
         $data['active'] = 2;
-        $data['query'] = Words::paginate(25);
+        $data['query']  = Words::paginate(25);
 
         return view('client.words', $data);
     }
@@ -35,7 +35,7 @@ class WordController extends Controller
      */
     public function create()
     {
-        $data['title'] = Lang::get('');
+        $data['title']  = Lang::get('');
         $data['active'] = 2;
 
         return view('', $data);
@@ -50,11 +50,11 @@ class WordController extends Controller
      */
     public function store(WordValidation $request)
     {
-        $word = new Words;
-        $word->user_id = Auth::user()->id;
-        $word->region_id = $request->regionID;
-        $word->word = $request->word;
-        $word->word_an = $request->word_an;
+        $word               = new Words;
+        $word->user_id      = Auth::user()->id;
+        $word->region_id    = $request->regionID;
+        $word->word         = $request->word;
+        $word->word_an      = $request->word_an;
         $word->word_fonetic = $request->word_fonetic;
         $word->dialect = $request->dialect;
         $word->description = $request->description;

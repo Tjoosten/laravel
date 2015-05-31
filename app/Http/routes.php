@@ -33,4 +33,8 @@ Route::group(['prefix' => 'auth'], function() {
   Route::get('/logout', 'AuthController@logout');
 });
 
+Route::group(['prefix' => 'api'], function() {
+    Route::resource('/kloekecode', 'ApiKloekcode');
+});
+
 Route::resource('words','WordController');

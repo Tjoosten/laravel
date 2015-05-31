@@ -17,11 +17,17 @@ use Illuminate\Support\Facades\Lang;
 
 class AuthController extends Controller
 {
+    private $AdminMiddleware = ['DoAdmin'];
+
+    function __construct()
+    {
+        $this->middleware('Admin', ['only' => $this->AdminMiddleware]);
+    }
 
     /**
      * User management view.
      *
-     * @return virw
+     * @return view
      */
     public function index()
     {
