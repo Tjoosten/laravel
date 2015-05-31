@@ -3,8 +3,7 @@
 	use Closure;
 	use Illuminate\Support\Facades\Redirect;
 	use Illuminate\Support\Facades\Auth;
-	use Illuminate\Http\Request;
-
+    
 	class AdminMiddleware {
 		/**
 		 * Handle an incoming request.
