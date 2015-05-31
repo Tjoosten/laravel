@@ -5,10 +5,9 @@ use App\Http\Requests;
 use App\Http\Requests\kloekecodeValidation;
 use League\Fractal\Manager;
 use League\Fractal\Resource\Collection;
-use App\Http\Controllers\Controller;
-
+use League\Fractal\Pagination\Cursor;
 use Illuminate\Http\Request;
-use Symfony\Component\VarDumper\Cloner\Cursor;
+use Illuminate\Support\Facades\Input;
 
 class ApiKloekcode extends ApiController {
 
@@ -31,13 +30,13 @@ class ApiKloekcode extends ApiController {
 	 */
 	public function index()
 	{
-        if ($currentCursorStr = Request::input('cursor', false)) {
+        if ($currentCursorStr = Input::get('cursor', false)) {
             $Kloekecode = Kloekecode::where('id', '>', $currentCursorStr)->take(5)->get();
         } else {
             $Kloekecode = Kloekecode::take(5)->get();
         }
 
-        $prevCursorStr = Request::input('prevCursor', 6);
+        $prevCursorStr = Input::get('prevCursor', 6);
         $newCursorStr  = $Kloekecode->last()->id;
         $cursor        = new Cursor($currentCursorStr, $prevCursorStr, $newCursorStr, $Kloekecode->count());
 
@@ -45,7 +44,7 @@ class ApiKloekcode extends ApiController {
         $resource->setCursor($cursor);
 
         $response = response($this->fractal->createData($resource)->toJson());
-        $response->header('application/json');
+        $response->header('Content-Type', 'application/json');
 
         return $response;
 	}
@@ -57,10 +56,7 @@ class ApiKloekcode extends ApiController {
 	 */
 	public function create()
 	{
-		$response = response($content, $status);
-        $response->header($mime);
-
-        return $response;
+		// No logic needed
 	}
 
     /**
@@ -87,7 +83,7 @@ class ApiKloekcode extends ApiController {
         }
 
         $response = response($content, 200);
-        $response->header('Application/json');
+        $response->header('Content-Type', 'Application/json');
 
         return $response;
 	}
@@ -111,7 +107,7 @@ class ApiKloekcode extends ApiController {
         }
 
         $response = response($content, 200);
-        $response->header('Application/json');
+        $response->header('Content-Type', 'Application/json');
 	}
 
 	/**
@@ -122,10 +118,7 @@ class ApiKloekcode extends ApiController {
 	 */
 	public function edit($id)
 	{
-		$response = response($content, $status);
-        $response->header($mime);
-
-        return $response;
+		// No logic needed
 	}
 
     /**
@@ -151,7 +144,7 @@ class ApiKloekcode extends ApiController {
         }
 
         $response = response($content, 200);
-        $response->header('Application/json');
+        $response->header('Content-Type', 'Application/json');
 	}
 
 	/**
@@ -174,7 +167,7 @@ class ApiKloekcode extends ApiController {
         }
 
         $response = response($content, 200);
-        $response->header('Application');
+        $response->header('Content-Type', 'Application/json');
 
         return $response;
 	}
