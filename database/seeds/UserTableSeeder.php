@@ -3,14 +3,16 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
-class UserTableSeeder extends Seeder {
+class UserTableSeeder extends Seeder
+{
 
-	/**
-	 * Run the database seeds.
-	 *
-	 * @return void
-	 */
-	public function run()
-	{
-    DB::table('users')->truncate();
-	}
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('users')->truncate();
+    }
+}
