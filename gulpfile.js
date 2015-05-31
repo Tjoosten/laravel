@@ -10,6 +10,7 @@ var elixir = require('laravel-elixir');
  | file for our application, as well as publishing vendor resources.
  |
  | Commands:
+ | -----------
  |
  | gulp         = Execute all registered tasks at once.
  | gulp watch   = Watch assets for changes.
