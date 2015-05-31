@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/Tjoosten/laravel.png?label=ready&title=Ready)](https://waffle.io/Tjoosten/laravel)
 Dialect database 
 =======================
 
