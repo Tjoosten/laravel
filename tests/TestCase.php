@@ -2,12 +2,6 @@
 
 class TestCase extends Illuminate\Foundation\Testing\TestCase {
 
-    public function setUp()
-    {
-        parent::setUp();
-        $this->prepareForTests();
-    }
-
 	/**
 	 * Creates the application.
 	 *
@@ -20,13 +14,5 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
 
 		return $app;
 	}
-
-    public function prepareForTests()
-    {
-        Config::set('database.default', 'sqlite');
-        Artisan::call('migrate:refresh');
-        Artisan::call('db:seed');
-
-    }
 
 }
