@@ -22,7 +22,10 @@ class kloekecodeValidation extends Request {
 	public function rules()
 	{
 		return [
-			//
+			'kloekecode' => 'required',
+            'plaats'     => 'required',
+            'gemeente'   => 'required',
+            'provincie'  => 'required',
 		];
 	}
 
