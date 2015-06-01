@@ -13,10 +13,10 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->truncate();
+        DB::table('kloekecode')->truncate();
 
-        DB::table('users')->insert(array(
-            array('lastname'=>'john','email'=>'john@clivern.com'),
+        DB::table('kloekecode')->insert(array(
+            array('plaats'=>'john','provincie'=>'john@clivern.com'),
         ));
     }
 }

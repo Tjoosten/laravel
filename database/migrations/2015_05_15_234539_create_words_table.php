@@ -14,13 +14,13 @@ class CreateWordsTable extends Migration {
 		Schema::create('words', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('user_id');
-			$table->integer('region_id');
-			$table->string('word');
-			$table->string('word_an');
-			$table->string('word_fonetic');
-			$table->string('dialect');
-			$table->text('description');
+			$table->integer('user_id')->nullable();
+			$table->integer('region_id')->nullable();;
+			$table->string('word')->nullable();;
+			$table->string('word_an')->nullable();
+			$table->string('word_fonetic')->nullable();
+			$table->string('dialect')->nullable();
+			$table->text('description')->nullable();
 			$table->nullableTimestamps();;
 		});
 	}
