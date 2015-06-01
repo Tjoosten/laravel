@@ -21,7 +21,7 @@ class CreateWordsTable extends Migration {
 			$table->string('word_fonetic');
 			$table->string('dialect');
 			$table->text('description');
-			$table->timestamps();
+			$table->nullableTimestamps();;
 		});
 	}
 

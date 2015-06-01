@@ -13,18 +13,18 @@ class Users extends Migration {
 	public function up() {
 		Schema::create('users', function($table) {
 			$table->increments('id');
-			$table->string('firstname');
-			$table->string('lastname');
-			$table->string('birth');
-			$table->string('adress');
-			$table->string('education');
-			$table->string('job');
-			$table->string('password');
-			$table->string('active');
-			$table->string('role');
-			$table->string('email')->unique();
-			$table->string('remember_token');
-			$table->timestamps();
+			$table->string('firstname')->nullable();
+			$table->string('lastname')->nullable();
+			$table->string('birth')->nullable();
+			$table->string('adress')->nullable();
+			$table->string('education')->nullable();
+			$table->string('job')->nullable();
+			$table->string('password')->nullable();
+			$table->string('active')->nullable();
+			$table->string('role')->nullable();
+			$table->string('email')->nullable()->unique();
+			$table->string('remember_token')->nullable();
+			$table->nullableTimestamps();
 		});
 	}
 

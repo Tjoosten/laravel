@@ -15,7 +15,7 @@ class CreateKloekcodesTable extends Migration {
 		Schema::create('kloekcodes', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->timestamps();
+			$table->nullableTimestamps();;
 		});
 	}
 
