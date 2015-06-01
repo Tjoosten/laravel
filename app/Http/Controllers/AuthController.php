@@ -17,10 +17,15 @@ use Illuminate\Support\Facades\Lang;
 
 class AuthController extends Controller
 {
+    /**
+     * @todo set classes for CSRF and Admin middleware.
+     */
     private $AdminMiddleware = ['DoAdmin'];
+    private $CsrfMiddleware  = [];
 
     function __construct()
     {
+        $this->middleware('CSRF', ['only' => $this->CsrfMiddleware]);
         $this->middleware('Admin', ['only' => $this->AdminMiddleware]);
     }
 
